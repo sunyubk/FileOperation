@@ -1,3 +1,31 @@
 # 应用服务 WEB 访问端口
-server.port=8080
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/file_operation
+    password: root
+    username: root
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  servlet:
+    multipart:
+      max-file-size: 4096MB
+      max-request-size: 4096MB
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case:
+
+
+file:
+  upload:
+    path: /Users/sunyu/WorkSpace/IdeaProjects/sy/FileOperation/upload
+
 
